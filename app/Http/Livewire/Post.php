@@ -137,7 +137,7 @@ class Post extends Component
     {
         try{
             Posts::find($id)->delete();
-            session()->flash('success',"Post Deleted Successfully!!");
+            session()->flash('error',"Post Deleted Successfully!!");
         }catch(\Exception $e){
             session()->flash('error',"Something goes wrong!!");
         }
