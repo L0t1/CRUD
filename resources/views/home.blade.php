@@ -1,3 +1,4 @@
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="en">
 <head>
