@@ -22,5 +22,7 @@
     </div>
  
     @livewireScripts
+<script src="/js/message.js"></script>
   </body>
 </html>
+
