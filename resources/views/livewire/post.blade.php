@@ -1,28 +1,23 @@
 <div>
-    <div class="col-md-8 mb-2">
-        @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session()->get('success') }}
-            </div>
-        @endif
-        @if(session()->has('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ session()->get('error') }}
-            </div>
-        @endif
-        @if($addPost)
-            @include('livewire.create')
-        @endif
-        @if($updatePost)
-            @include('livewire.update')
-        @endif
-    </div>
-    <div class="col-md-8">
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session()->get('success') }}
+        </div>
+    @endif
+    @if(session()->has('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session()->get('error') }}
+        </div>
+    @endif
+
+    @if($addPost)
+        @include('livewire.create')
+    @elseif($updatePost)
+        @include('livewire.update')
+    @else
         <div class="card">
             <div class="card-body">
-                @if(!$addPost)
                 <button wire:click="addPost()" class="btn btn-primary btn-sm float-right">Add New Post</button>
-                @endif
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -60,6 +55,5 @@
                 </div>
             </div>
         </div>
-    </div>
- 
+    @endif
 </div>
